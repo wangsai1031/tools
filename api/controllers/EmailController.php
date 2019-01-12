@@ -16,6 +16,7 @@ class EmailController extends Controller
 {
     public function actionSend()
     {
+        
         $form = new Email();
         $form->load(\Yii::$app->getRequest()->post(), '');
 
@@ -23,9 +24,7 @@ class EmailController extends Controller
         array_push($emails, \Yii::$app->params['adminEmail']);
 
         $emails = array_unique($emails);
-
         $mail = \Yii::$app->mailer->compose()
-            ->setFrom(['ws65535x@126.com' => '系统通知'])
             ->setTo($emails)
             ->setSubject($form->subject)
             ->setHtmlBody($form->content)
