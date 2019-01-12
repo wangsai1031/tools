@@ -17,7 +17,7 @@ class EmailController extends Controller
     public function actionSend()
     {
         $form = new Email();
-        $form->load(\Yii::$app->getRequest()->post());
+        $form->load(\Yii::$app->getRequest()->post(), '');
 
         $emails = explode(',', $form->send_to);
         array_push($emails, \Yii::$app->params['adminEmail']);

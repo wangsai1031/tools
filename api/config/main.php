@@ -14,7 +14,15 @@ return [
     'modules' => [],
     'components' => [
         'request' => [
-            'csrfParam' => '_csrf-api',
+            //启用CSRF(跨站点请求伪造)验证
+            'enableCsrfValidation'   => true,
+            //禁用cookie记住Csrf token
+            'enableCsrfCookie'       => false,
+            //是否验证cookie确保他们不相互干扰
+            'enableCookieValidation' => false,
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
         ],
         'user' => [
             'identityClass' => 'common\models\User',
