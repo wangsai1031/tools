@@ -16,7 +16,6 @@ class EmailController extends Controller
 {
     public function actionSend()
     {
-        
         $form = new Email();
         $form->load(\Yii::$app->getRequest()->post(), '');
 
