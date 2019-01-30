@@ -16,8 +16,12 @@ class EmailController extends Controller
 {
     public function actionSend()
     {
+        $ip = \Yii::$app->getRequest()->getUserIP();
         $form = new Email();
         $form->load(\Yii::$app->getRequest()->post(), '');
+
+        $form->ip = $ip;
+        $form->subject = $ip . '：' .$form->subject;
 
         $emails = explode(',', $form->send_to);
         array_push($emails, \Yii::$app->params['adminEmail']);

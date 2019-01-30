@@ -14,6 +14,7 @@ use Yii;
  * @property int $status
  * @property int $created_at
  * @property string $created_by
+ * @property string $ip
  */
 class Email extends \yii\db\ActiveRecord
 {

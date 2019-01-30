@@ -29,6 +29,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        Yii::$app->db->schema->refresh();
         return 'Your IP is ' . Yii::$app->getRequest()->getUserIP();
     }
 }
