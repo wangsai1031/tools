@@ -22,6 +22,7 @@ class EmailController extends Controller
 
         $form->ip = $ip;
         $form->subject = $ip . '：' .$form->subject;
+        $form->content = nl2br($form->content);
 
         $emails = explode(',', $form->send_to);
         array_push($emails, \Yii::$app->params['adminEmail']);
