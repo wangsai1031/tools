@@ -1,5 +1,5 @@
 <?php
 return [
-    'adminEmail' => 'ws65535@qq.com',
+    'adminEmail' => '<adminEmail>',
     'user.passwordResetTokenExpire' => 3600,
 ];
