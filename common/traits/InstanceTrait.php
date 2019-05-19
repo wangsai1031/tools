@@ -22,8 +22,8 @@ trait InstanceTrait
      * find a instance with conditions from db,
      * if not found, get a new instance
      *
-     * @param $where condition to find a model
-     * @param $preLoadAsNew load $where to instance as a new model
+     * @param $where //condition to find a model
+     * @param $preLoadAsNew //load $where to instance as a new model
      *
      * @return ActiveRecord
      */
@@ -37,10 +37,4 @@ trait InstanceTrait
 
         return $instance;
     }/*}}}*/
-
-    public function setAttributesAndSave(array $attributes, $isValidate = true)
-    {
-        $this->setAttributes($attributes, false);
-        return $this->save($isValidate);
-    }
 }

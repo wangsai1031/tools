@@ -24,12 +24,6 @@ trait KVTrait
      *      ]);
      *  }
      *
-     * @return  array|mixed kv.array
-     */
-    /**
-     * @param $key
-     * @param $value
-     * @param $closure
      * @param bool $useCache
      * @param int $duration
      * @param null $dependency
@@ -38,7 +32,7 @@ trait KVTrait
     public static function kv($key, $value, $closure = false, $useCache = false, $duration = null, $dependency = null)
     {/*{{{*/
         if ($useCache) {
-            # 确保是该函数完全同样的使用
+            // 确保是该函数的参数和调用位置完全相同
             $params = func_get_args();
             $params[] = __CLASS__ . __METHOD__;
             $cacheKey = $params;

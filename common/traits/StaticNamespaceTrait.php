@@ -12,12 +12,12 @@ namespace common\traits;
 trait StaticNamespaceTrait
 {
     /**
-     * @param string $shortName 不包含命名空间的类名
-     * @return string
-     *
      * 提供一个类名，该方法会在当前目录下寻找该类是否存在
      * 若不存在，则继续去上一级目录寻找
      *
+     * @param $shortName //不包含命名空间的类名
+     * @return string
+     * @throws \ReflectionException
      */
     public static function staticClassName($shortName)
     {
